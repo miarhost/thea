@@ -1,0 +1,16 @@
+<div class="places">
+	<h1 class="text-center">PLACES</h1>
+	<ul class="nav nav-tabs navbar-left latest-navleft">
+		<li role="presentation" class="li-sortby"><span class="sortby">SORT BY: </span></li>
+		<li data-filter=".RECENT" role="presentation"><a href="#mostrecent" class="prcBtnR">MOST RECENT </a></li>
+		<li data-filter=".POPULAR" role="presentation"><a href="#mostpopular" class="prcBtnR">MOST POPULAR </a></li>
+		<li  role="presentation"><a href="#" class="alphSort">ALPHABETICAL </a></li>
+		<li data-filter=".HPRICE" role="presentation"><a href="#" class="prcBtnH">HIGHEST PRICES </a></li>
+		<li data-filter=".LPRICE" role="presentation"><a href="#" class="prcBtnL">LOWEST  PRICES </a></li>
+		<li id="hideonmobile">
+	</ul>
+</div>
+
+<br>
+<br>
+<%= render partial: 'places/index' %>
