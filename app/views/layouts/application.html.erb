@@ -33,9 +33,15 @@
 				<li> mail us: miarhost@gmail.com </li>
 			</ul>
 			<ul class="logreg">
-				<li><a href="#">Login </a> </li>
-				<li><a href="#"><span class="register">Register</span></a></li>
-			</ul>
+				        <% if !user_signed_in? %>
+                     
+        <li><span><%= link_to 'Register', new_user_registration_path %></span> | </li>
+        <li><span><%= link_to 'Login', new_user_session_path %></span> | </li>
+                        <% else %>
+          <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+                                         
+                      <% end %>    
+  		   </ul>
 	</div>
 	<!-- Navbar Up -->
 	<nav class="topnavbar navbar-default topnav">
