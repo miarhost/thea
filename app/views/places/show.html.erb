@@ -1,2 +1,21 @@
-<h1>Places#show</h1>
-<p>Find me in app/views/places/show.html.erb</p>
+<div class="allcontain">
+	<div class="contact">
+		<div class="newslettercontent">
+			<div class="leftside">
+				<img id="image_border" src="<%= link_to(image_tag(@place.image.url, version: :large)) if @place.image? %>">
+					<div class="contact-form">
+						<h1><%= @place.name %></h1>
+							<div class="form-group group-coustume">
+
+								<textarea class="message-form"><%= @place.description %></textarea>
+
+							</div>
+					</div>
+			</div>
+
+
+			</div>
+		</div>
+
+	</div>
+</div>

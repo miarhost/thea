@@ -1,0 +1,41 @@
+ <section class="form text-center no-padding-bottom">
+        <div class="container">
+          <div class="row">
+             <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+               <p class="lead text-gray-light">Add a new place of your interest, try to describe and add a picture</p>
+
+               <%= form_for @place  do |f| %>
+             
+ <% if place.errors.any? %>
+  <div id="error explanation">
+  <h2><%= pluralize(place.errors.count, "error") %> prohibited this place from being saved:</h2>
+
+   <ul> 
+    <% place.errors.full_messages.each do |message| %>
+     <li><%= message %></li>
+    <% end %>
+   </ul>
+  </div>
+ <% end %>
+              <div class="col-md-12">
+                <%= f.label :name, 'A place is called:' %>
+              <%= f.text_field :name, placeholder: 'name', class: 'form-control' %>
+              </div>
+               <div class="col-md-12">
+                <%= f.label :description, 'Say something about it:' %>
+              <%=  f.text_field :description, placeholder: 'a fabulous city', class: 'form-control' %>
+               </div>
+              <div class="col-md-12">
+                <%= f.label :image, 'Add a photo:' %>
+              <%= f.file_field :image %>
+              <%= f.hidden_field :image_cache %>
+               </div>
+                  <div class="actions">
+                 <%= f.button 'Submit', class: 'btn btn-primary', type: 'submit' %>
+                 </div>
+                 <% end %>
+               </div>
+          </div> 
+        </div>
+<br>
+    

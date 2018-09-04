@@ -1,9 +1,8 @@
-class PlacesController < ApplicationController
- before_action :set_product, only: [:show, :edit, :update, :destroy]
 
-  def index
-  	@places = Place.all
-  end
+class PlacesController < ApplicationController
+
+ #before_action :set_place, only: [:show, :edit, :update, :destroy]
+ skip_before_action :verify_authenticity_token
 
   def new
   	@place = Place.new
@@ -12,13 +11,19 @@ class PlacesController < ApplicationController
    def show
   	@place = Place.find(params[:id])
   end
+  
+  def index
+    
+    @places = Place.paginate(:page => params[:page], :per_page => 20)
+  
+  end
 
   def create
-  	@place = Place.find(place_params)
+  	@place = Place.new(place_params)
   	respond_to do |format|
   	if @place.save
-        format.html { redirect_to @places, notice: 'New place was created.' }
-        format.json { render :show, status: :created, location: @place}
+        format.html { redirect_to places_url, notice: 'New place was created.' }
+        format.json { render :show, status: :created, location: @place }
       else
         format.html { render :new }
         format.json { render json: @place.errors, status: :unprocessable_entity }
@@ -52,9 +57,9 @@ class PlacesController < ApplicationController
 
   private 
 
-  def set_place
-  	@place = Place.find(params[:id])
-  end
+ #def set_place
+  	#@place = Place.find(params[:id])
+  #end
 
   def place_params
   	params.require(:place).permit(:name, :description, :image, :image_cache)

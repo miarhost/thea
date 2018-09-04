@@ -1,11 +1,14 @@
-
-<% @places.each do |place| %> 
-<!-- ________________________UI STYLE FOR PLACE_______________-->
+<%= will_paginate @places %>
 	<div class="grid">
 		<div class="row">
+<% @places.each do |place| %> 
+<!-- ________________________UI STYLE FOR PLACE_______________-->
+
+
+
 			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 				<div class="txthover">
-					<img src="<%= image_tag(place.image) %>" alt="1">
+					<img src="<%= link_to(image_tag(place.image_url, version: :medium)) if place.image? %>" alt="2">
 						<div class="txtcontent">
 							<div class="stars">
 								<div class="glyphicon glyphicon-star"></div>
@@ -16,23 +19,22 @@
 								<h3 class="name"><%= place.name %></h3>
 								<p><%= place.description %><br>
 	 							sed do eiusmod tempor incididunt" </p>
-	 							
-	 							<button>READ MORE</button><br>
+	 							<%= link_to 'SEE MORE',place_path(place) %><br>
 	 							<div class="wishtxt">
-		 							<p class="paragraph1"> Like <span class="glyphicon glyphicon-heart"></span> </p>
-		 							<p class="paragraph2">Compare <span class="icon"><img src="image/compicon.png" alt="compicon"></span></p>
+		 							<p class="paragraph1"> LIKE <span class="glyphicon glyphicon-heart"></span> </p>
+		 							<p class="paragraph2">Compare <span class="icon"><img src="#" alt="compicon"></span></p>
 		 						</div>
 							</div>
-							<% end %>
 							<div class="stars2">
 								<div class="glyphicon glyphicon-star"></div>
 								<div class="glyphicon glyphicon-star"></div>
 								<div class="glyphicon glyphicon-star"></div>
 							</div>
-
 						</div>
 				</div>	 
 			</div>
-			
+
+			<% end %>
+
 		</div>
 	</div>
