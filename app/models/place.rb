@@ -7,5 +7,7 @@ class Place < ApplicationRecord
 	    message: 'Must be a gif, jpg or png image!' }
 
 mount_uploader :image, ImageUploader
+
+belongs_to :user
      
 end
