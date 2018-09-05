@@ -1,16 +1,21 @@
 <div class="places">
 	<h1 class="text-center">PLACES</h1>
 	<ul class="nav nav-tabs navbar-left latest-navleft">
-		<li role="presentation" class="li-sortby"><span class="sortby">SORT BY: </span></li>
-		<li data-filter=".RECENT" role="presentation"><a href="#mostrecent" class="prcBtnR">MOST RECENT </a></li>
-		<li data-filter=".POPULAR" role="presentation"><a href="#mostpopular" class="prcBtnR">MOST POPULAR </a></li>
-		<li  role="presentation"><a href="#" class="alphSort">ALPHABETICAL </a></li>
-		<li data-filter=".HPRICE" role="presentation"><a href="#" class="prcBtnH">HIGHEST PRICES </a></li>
-		<li data-filter=".LPRICE" role="presentation"><a href="#" class="prcBtnL">LOWEST  PRICES </a></li>
-		<li id="hideonmobile">
+		<li role="presentation" class="li-sortby"><span class="sortby">							
+				<a href="#" data-toggle="modal" data-target="#create" class="btn btn-primary">POST A NEW PLACE</a>
+			    </li>
 	</ul>
 </div>
-
 <br>
 <br>
 <%= render partial: 'places/index' %>
+
+   <div id="create" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" class="modal fade">
+              
+       	<%= render 'places/new' %>
+              
+    </div>
+
+<br>
+<br>
+
