@@ -1938,7 +1938,28 @@ height: 30px;
           transition-duration: 0.8s;
 }
 
+/* MODAL */
 
+#login-modal {
+  overflow: hidden;
+}
+#login-modal .modal-header h4 {
+  text-transform: uppercase;
+}
+#login-modal form {
+  margin-bottom: 24px;
+}
+#login-modal a {
+  color: #ff7473;
+}
+#login-modal p {
+  font-weight: 300;
+  margin-bottom: 24px;
+  font-size: 15px;
+}
+.modal-backdrop {
+  z-index: 1035;
+}
 
 
 
