@@ -24,7 +24,7 @@ gem 'carrierwave', '~> 0.11.2'
 gem 'bcrypt', '~> 3.1.7'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'will_paginate', '~> 3.1.1'
-
+gem 'glyphicons-rails', '~> 0.1.2'
 group :development, :test do
  
   gem 'sqlite3'
