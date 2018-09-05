@@ -1,8 +1,11 @@
 <div class="places">
 	<h1 class="text-center">PLACES</h1>
 	<ul class="nav nav-tabs navbar-left latest-navleft">
-		<li role="presentation" class="li-sortby"><span class="sortby">							
+		<li role="presentation" class="li-sortby"><span class="sortby">							<% if !user_signed_in? %>
+			    <a href="<%= new_user_session_path %>" class="btn btn-primary">POST A NEW PLACE</a>
+			    <% else %>
 				<a href="#" data-toggle="modal" data-target="#create" class="btn btn-primary">POST A NEW PLACE</a>
+				<% end %>
 	    </li>
 	</ul>
 </div>
@@ -19,3 +22,4 @@
 <br>
 <br>
 
+ 

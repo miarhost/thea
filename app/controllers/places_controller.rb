@@ -1,6 +1,6 @@
 
 class PlacesController < ApplicationController
-
+ before_action :authenticate_user!, only: [:create]
  #before_action :set_place, only: [:show, :edit, :update, :destroy]
  skip_before_action :verify_authenticity_token
 
@@ -19,7 +19,10 @@ class PlacesController < ApplicationController
   end
 
   def create
-  	@place = Place.new(place_params)
+   @place = current_user.places.build(place_params) 
+     if !user_signed_in?
+      redirect_to new_user_session_path
+     end
   	respond_to do |format|
   	if @place.save
         format.html { redirect_to places_url, notice: 'New place was created.' }
