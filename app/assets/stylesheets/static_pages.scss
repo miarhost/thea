@@ -257,6 +257,7 @@ label {
   border-color: #dddddd;
 }
  /* === GENERAL === */
+
 .allcontain{
 	max-width: 1366px;
 	margin-left: auto;
@@ -364,6 +365,15 @@ padding-left: 5%;
 .socialicon{
 	padding-left: 0px;
 }
+}
+.text-gray {
+  color: #555555;
+}
+.text-gray-light {
+  color: #999999;
+}
+.text-gray-lighter {
+  color: #cdcdcd;
 }
 
 /*----------------------End Header --------------------*/
