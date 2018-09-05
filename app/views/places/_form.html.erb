@@ -1,10 +1,8 @@
 
 
-          
-                     <div class="container">
-          <div class="row">
+          <div class="forms">
             
-               <p class="lead text-gray-light">Add a new place of your interest, try to describe and add a picture</p>
+               <p class="lead text-gray-light">Add a new place of your interest, <br>try to describe and add a picture</p>
 
                <%= form_for @place  do |f| %>
              
@@ -19,25 +17,26 @@
    </ul>
   </div>
  <% end %>
-              <div class="col-md-12">
+              <div class="col-md-6">
                 <%= f.label :name, 'A place is called:' %>
               <%= f.text_field :name, placeholder: 'name', class: 'form-control' %>
               </div>
-               <div class="col-md-12">
+               <div class="col-sm-6">
                 <%= f.label :description, 'Say something about it:' %>
               <%=  f.text_field :description, placeholder: 'a fabulous city', class: 'form-control' %>
                </div>
-              <div class="col-md-12">
+              <div class="col-sm-6">
                 <%= f.label :image, 'Add a photo:' %>
               <%= f.file_field :image %>
               <%= f.hidden_field :image_cache %>
                </div>
+              
                   <div class="actions">
                  <%= f.button 'Submit', class: 'btn btn-primary', type: 'submit' %>
                  </div>
+              
                  <% end %>
                </div>
-
-        </div>
+       </div>
 
      <!--MODAL FORM END -->
