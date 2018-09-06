@@ -2,7 +2,7 @@
 	<div class="contact">
 		<div class="newslettercontent">
 			<div class="leftside">
-				<img id="image_border" src="<%= link_to(image_tag(@place.image.url, version: :large)) if @place.image? %>">
+				<img id="image_border" src="<%= image_tag(@place.image.url, version: :large) if @place.image? %>">
 					<div class="contact-form">
 						<h1><%= @place.name %></h1>
 							<div class="form-group group-coustume">

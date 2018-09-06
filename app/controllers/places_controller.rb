@@ -1,7 +1,7 @@
 
 class PlacesController < ApplicationController
  before_action :authenticate_user!, only: [:create]
- #before_action :set_place, only: [:show, :edit, :update, :destroy]
+ before_action :set_place, only: [:show, :edit, :update, :destroy]
  skip_before_action :verify_authenticity_token
 
   def new
@@ -60,9 +60,9 @@ class PlacesController < ApplicationController
 
   private 
 
- #def set_place
-  	#@place = Place.find(params[:id])
-  #end
+ def set_place
+  	@place = Place.find(params[:id])
+  end
 
   def place_params
   	params.require(:place).permit(:name, :description, :image, :image_cache)

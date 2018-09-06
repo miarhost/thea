@@ -4,7 +4,7 @@
             
                <p class="lead text-gray-light">Add a new place of your interest, <br>try to describe and add a picture</p>
 
-               <%= form_for @place  do |f| %>
+               <%= form_for @place, html: { multipart: true } do |f| %>
              
  <% if place.errors.any? %>
   <div id="error explanation">

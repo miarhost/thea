@@ -7,11 +7,4 @@ root to: "static_pages#landing_page"
 
 get '/landing_page', to: 'static_pages#landing_page'
 
-  get 'places/index'
-
-  get 'places/new'
-
-  get 'places/show'
-
-
 end
