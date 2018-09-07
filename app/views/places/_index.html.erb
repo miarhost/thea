@@ -21,7 +21,7 @@
 	 							Come and visit it! </p>
 	 							<%= link_to 'SEE MORE',place_path(place) %><br>
 	 							<div class="wishtxt">
-		 							<p class="paragraph1"> LIKE <span class="glyphicon glyphicon-heart"></span> </p>
+		 							<p class="paragraph1">LIKE<a class="glyphicon glyphicon-heart" href="<%= like_path(place_id: place.id)%>"></a> </p>
 		 						</div>
 							</div>
 							<div class="stars2">
