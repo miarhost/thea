@@ -1,6 +1,6 @@
 
 class PlacesController < ApplicationController
- before_action :authenticate_user!, only: [:create]
+ before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
  before_action :set_place, only: [:show, :edit, :update, :destroy]
  skip_before_action :verify_authenticity_token
 
@@ -10,12 +10,11 @@ class PlacesController < ApplicationController
   
    def show
   	@place = Place.find(params[:id])
-  end
+   end
   
   def index
-    
     @places = Place.paginate(:page => params[:page], :per_page => 20)
-  
+
   end
 
   def create
@@ -24,7 +23,7 @@ class PlacesController < ApplicationController
       redirect_to new_user_session_path
      end
   	respond_to do |format|
-  	if @place.save
+  	  if @place.save
         format.html { redirect_to places_url, notice: 'New place was created.' }
         format.json { render :show, status: :created, location: @place }
       else

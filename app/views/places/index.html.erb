@@ -21,7 +21,8 @@
 	 							Come and visit it! </p>
 	 							<%= link_to 'SEE MORE',place_path(place) %><br>
 	 							<div class="wishtxt">
-		 							<p class="paragraph1"> LIKE <span class="glyphicon glyphicon-heart"></span> </p>
+		 							
+		 							 <%= link_to 'Like', place_likes_path(place), method: :post, remote: true, class: 'glyphicon glyphicon-heart' %>
 		 						</div>
 							</div>
 							<div class="stars2">

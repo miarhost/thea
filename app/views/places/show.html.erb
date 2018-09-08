@@ -6,7 +6,7 @@
 			     <p><%= @place.description %></p>
 		     </div>
              <div class="rightside">
-             <p class="glyphicon glyphicon-heart"> Likes: </p>
+             <p class="glyphicon glyphicon-heart"> Likes: <%= @place.likes.count %></p>
              <p>
   <%= link_to 'Edit', edit_place_path(@place) %> |
    <%= link_to 'Delete', @place, method: :delete, data: { confirm: 'Are you sure?' } %> |

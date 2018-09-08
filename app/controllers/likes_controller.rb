@@ -1,17 +1,48 @@
 class LikesController < ApplicationController
 
+#respond_to :js
+ skip_before_action :verify_authenticity_token
+ before_action :authenticate_user!
+ before_action :find_place, only: [:create, :destroy]
+ 
 
-def like
-  @user = current_user
-  @place = Place.find(params[:place_id])
-  @user.like!(@place)
-end
+  def create
+	@like = current_user.likes.create(user_id: current_user.id)
+	@like.place_id = params[:place_id]
+	  if !user_signed_in?
+    redirect_to new_user_session_path
+     end
+     if current_user
+	@like.save
+	flash[:success] = 'Liked!'
+redirect_to place_path(@place)
+     end
+  end
 
-def unlike
-  @user = current_user
-  @like = @user.likes.find_by_place_id(params[:place_id])
-  @place = Place.find(params[:place_id])
-  @like.destroy!
-end
+  def destroy
+    place.likes.where(user: current_user).destroy_all
+    redirect_to place_redirect(place), :notice => 'Unliked!'
+  end
+
+
+ #def likes
+    #place.likes.where(user: current_user)
+  #end
+
+
+ 
+ def total_likes
+ 	place.likes.count
+ end
+
+ private 
+
+ def like_params
+ 	params.require(:likes).permit(:user_id, :place_id)
+ end
+
+  def find_place
+   @place = Place.find(params[:place_id])
+  end
 
 end

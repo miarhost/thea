@@ -5,9 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :likes, dependent: :destroy
-  has_many :places, through: :likes
+  has_many :places
   
-def heart!(place)
+def like!(place)
   self.likes.create!(place_id: place.id)
 end
 
@@ -18,7 +18,7 @@ def unlike!(place)
 end
 
 # returns true of false if a post is hearted by user
-def heart?(post)
+def like?(post)
   self.likes.find_by_place_id(place.id)
 end
 
