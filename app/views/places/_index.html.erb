@@ -23,6 +23,7 @@
 	 							<div class="wishtxt">
 		 							
 		 							 <%= link_to 'Like', place_likes_path(place), method: :post, remote: true, class: 'glyphicon glyphicon-heart' %>
+		 							  <%= link_to 'Unlike', place_likes_path(place), method: :delete, remote: true, class: 'glyphicon glyphicon-fire' %>
 		 						</div>
 							</div>
 							<div class="stars2">

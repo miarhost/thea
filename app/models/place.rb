@@ -10,6 +10,6 @@ mount_uploader :image, ImageUploader
 
 belongs_to :user, :optional => true
 
-has_many :likes 
+has_many :likes, dependent: :destroy
 
 end
