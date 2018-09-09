@@ -8,7 +8,7 @@ class LikesController < ApplicationController
 
 
   def create
-	@like = current_user.likes.create(user_id: current_user.id)
+	@like = current_user.likes.build(user_id: current_user.id)
 	@like.place_id = params[:place_id]
 	  if !user_signed_in?
     redirect_to new_user_session_path

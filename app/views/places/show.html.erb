@@ -3,7 +3,7 @@
 		     <div class="leftside">
 <%= image_tag(@place.image.url, version: :medium) if @place.image? %>
                 <h1><%= @place.name %></h1>
-			     <p><%= @place.description %></p>
+			    
 		     </div>
              <div class="rightside">
              <p class="glyphicon glyphicon-heart"> Likes: <%= @place.likes.count %></p>
@@ -13,6 +13,13 @@
     <%= link_to 'Back', places_path %>
             </p>
              </div>
+                     <div class="row d-flex align-items-stretch">
+                        <div class="text col-md-5">
+                             <h1><%= @place.name %></h1>
+                                <p><%= @place.description %></p>
+                            </div>
+                        </div>
+                    </div>
     </div>
 
 
