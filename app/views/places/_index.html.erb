@@ -21,9 +21,11 @@
 	 							Come and visit it! </p>
 	 							<%= link_to 'SEE MORE',place_path(place) %><br>
 	 							<div class="wishtxt">
-		 							
-		 							 <%= link_to 'Like', place_likes_path(place), method: :post, remote: true, class: 'glyphicon glyphicon-heart' %>
-		 							  <%= link_to 'Unlike', place_likes_path(place), method: :delete, remote: true, class: 'glyphicon glyphicon-fire' %>
+		 						     
+		 							<%= link_to 'Like', place_likes_path(place), method: :post, remote: true, class: 'glyphicon glyphicon-heart' %>
+		 							 <% if current_user %>
+		 							    <%= link_to 'Unlike', place_like_url(place_id: place, id: current_user.id), method: :delete, class: 'glyphicon glyphicon-fire' %>
+		 							  <% end %>
 		 						</div>
 							</div>
 							<div class="stars2">
