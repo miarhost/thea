@@ -23,12 +23,6 @@
     <!-- Header -->
 <div class="allcontain">
 	<div class="header">
-			<ul class="socialicon">
-				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-				<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-			</ul>
 			<ul class="givusacall">
 				<li> mail us: miarhost@gmail.com </li>
 			</ul>
@@ -60,17 +54,46 @@
 			<ul class="nav navbar-nav" id="navbarontop">
 				<li class="active"><a href="<%= root_path %>">HOME</a> </li>
 				<li>
-					<a href="#">CONTACT</a>
- 
+					
+                    <a href="#" data-toggle="modal" data-target="#contact">CONTACT</a>
 				</li>
-
 			</ul>
 		</div>
 	</nav>
 </div>
  <%= yield %>
 
-
+   <div id="contact" tabindex="-1" role="dialog" aria-labelledby="Login"  class="modal">
+       <div class="modal-content">
+           <div class="modal-header">
+                <div class="modal-body">
+                <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                  	<img style="border-radius: 30px; width: 370%" src="<%= asset_path 'hk.jpg' %>">
+				    <div class="txthover">
+					
+						<div class="txtcontent">
+							<div class="stars">
+								<div class="glyphicon glyphicon-star"></div>
+								<div class="glyphicon glyphicon-star"></div>
+								<div class="glyphicon glyphicon-star"></div>
+							</div>
+							<div class="simpletxt">
+								<h3 class="name">The Most Liked Places</h3>
+								<p>TripAdvisor recently released its list of the most popular tourist attractions in the world.The list is part of TripAdvisor's Traveler's Choice awards, which highlight traveler favorites based on ratings and reviews.Here are the world's highest-rated landmarks.  </p>
+	 						</div>
+							<div class="stars2">
+								<div class="glyphicon glyphicon-star"></div>
+								<div class="glyphicon glyphicon-star"></div>
+								<div class="glyphicon glyphicon-star"></div>
+							</div>
+						</div>
+				</div>	 
+			</div>
+        </div>
+      </div>
+  </div>            
+ </div>
    
   </body>
 </html>
